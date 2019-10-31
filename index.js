@@ -38,7 +38,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-app.get("/", async function(req, res) {
+app.get("/", function(req, res) {
+
   res.render("index");
 });
 
