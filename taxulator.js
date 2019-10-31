@@ -23,10 +23,11 @@ module.exports = function TaxiRide() {
         if (typeOfTaxi === "siyaya" && numberOfPass > 16) {
             capacityStatus = "Overload";
         }
-        else
+
+
     }
 
-    function getCapacityStatus(){
+    function getCapacityStatus() {
         return capacityStatus;
     }
 
@@ -92,6 +93,7 @@ module.exports = function TaxiRide() {
         return "R" + change
     }
 
+
     return {
         tripSetUp,
         clctFare,
@@ -103,6 +105,7 @@ module.exports = function TaxiRide() {
         chooseTaxi,
         overloadChecker,
         getCapacityStatus,
+
 
 
     }

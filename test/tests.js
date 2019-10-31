@@ -35,8 +35,14 @@ describe('taxulator-app', function () {
 
     });
 
-    it('should check if the taxi is overload or not', function () {
+    it('should check if the quantum taxi is overload or not', function () {
         taxiRide.overloadChecker("quantum", 17)
+
+        assert.equal("Overload", taxiRide.getCapacityStatus())
+
+    });
+    it('should check if the siyaya taxi is overload or not', function () {
+        taxiRide.overloadChecker("siyaya", 25)
 
         assert.equal("Overload", taxiRide.getCapacityStatus())
 
