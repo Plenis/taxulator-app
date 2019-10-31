@@ -8,11 +8,16 @@ module.exports = function TaxiRide() {
     var typeOfTaxi = "";
     var numberOfPass = 0;
     var capacityStatus = "";
+    var rating = 0;
+
+
 
     function chooseTaxi(type) {
         typeOfTaxi;
         typeOfTaxi = type;
+        return typeOfTaxi
     }
+
 
     function overloadChecker(typeOfTaxi, numberOfPass) {
         capacityStatus;
@@ -93,6 +98,19 @@ module.exports = function TaxiRide() {
         return "R" + change
     }
 
+    function rateDriver(results) {
+        rating;
+        rating = results;
+
+    }
+
+    function showResults(rating) {
+        if (rating < 5) {
+            return "Not "
+        }
+
+    }
+
 
     return {
         tripSetUp,
@@ -105,6 +123,8 @@ module.exports = function TaxiRide() {
         chooseTaxi,
         overloadChecker,
         getCapacityStatus,
+        showResults,
+        rateDriver
 
 
 
