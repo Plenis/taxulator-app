@@ -14,6 +14,7 @@ module.exports = function TaxiRide() {
         typeOfTaxi = type;
         return typeOfTaxi;
     }
+    
 
     function overloadChecker(typeOfTaxi, numberOfPass) {
         capacityStatus;

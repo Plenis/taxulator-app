@@ -1,13 +1,13 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
-// const TaxiRide = require("./taxulator");
+const TaxiRide = require("./taxulator");
 const flash = require("express-flash");
 const session = require("express-session");
 
 const app = express();
 
-// const taxulator = TaxiRide();
+const taxulator = TaxiRide();
 
 app.engine(
   "handlebars",
@@ -39,11 +39,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-
   res.render("index");
 });
 
 app.get('/menu', function(req, res){
+  let taxiType = req.body.typeOfTaxi
+  taxulator.chooseTaxi(taxiType);
 res.render('option1');
 });
 
