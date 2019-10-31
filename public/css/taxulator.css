@@ -13,9 +13,13 @@
 }
 
 body { 
-  background-color: salmon
+  background-color: rgb(247, 32, 8)
 }
-a {
+#wrapper {
+  padding: 15px;
+  width: 200px;
+}
+/* a {
   color: cyan;
 }
 a:hover{
@@ -24,7 +28,7 @@ a:hover{
 .error{
   color: rgb(253, 49, 49);
   scroll-margin-bottom: 1em;
-}
+} */
 /* .text {
   margin: auto;
   width: 60%;
@@ -41,7 +45,6 @@ a:hover{
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     text-align: center; 
-    /* width: 75%; */
     display: grid;
   }
 }
@@ -49,7 +52,6 @@ a:hover{
 @media only screen and (min-width: 45em) {  /* 720px */
   .container {
     text-align: center; 
-    /* width: 80%; */
     display: grid;
   }
   
@@ -58,8 +60,6 @@ a:hover{
 @media only screen and (min-width: 60em) { /* 960px */
   .container {
     text-align: center; 
-    /* width: 75%; */
-    /* max-width: 60rem; */
     display: grid;
   }
 }

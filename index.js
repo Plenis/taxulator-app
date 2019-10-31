@@ -1,13 +1,13 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
-const TaxiRide = require("./taxulator");
+// const TaxiRide = require("./taxulator");
 const flash = require("express-flash");
 const session = require("express-session");
 
 const app = express();
 
-const taxulator = TaxiRide();
+// const taxulator = TaxiRide();
 
 app.engine(
   "handlebars",
@@ -40,6 +40,10 @@ app.use(bodyParser.json());
 
 app.get("/", async function(req, res) {
   res.render("index");
+});
+
+app.get('/menu', function(req, res){
+res.render('option1');
 });
 
 const PORT = process.env.PORT || 4422;
