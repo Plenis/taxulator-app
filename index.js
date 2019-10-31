@@ -48,6 +48,18 @@ app.get('/menu', function(req, res){
 res.render('option1');
 });
 
+app.get('/calculateFare', function(req, res){
+  res.render('destination');
+});
+
+app.get('/taxiMath', function(req, res){
+  res.render('taxi_math');
+});
+
+app.get('/taxiFareTotal', function(req, res){
+  res.render('taxi_total');
+});
+
 const PORT = process.env.PORT || 4422;
 
 app.listen(PORT, function() {
