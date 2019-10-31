@@ -20,5 +20,13 @@
     "express-flash": "0.0.2",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plenis/taxulator-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Plenis/taxulator-app/issues"
+  },
+  "homepage": "https://github.com/Plenis/taxulator-app#readme"
 }
