@@ -1,0 +1,65 @@
+/**
+*** SIMPLE GRID
+*** (C) ZACH COLE 2016
+**/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+* {
+  font-family: Impact;
+  font-size: x-large;
+  color: white;
+  line-height: 1.5;
+}
+
+body { 
+  background-color: salmon
+}
+a {
+  color: cyan;
+}
+a:hover{
+  color: cyan;
+}
+.error{
+  color: rgb(253, 49, 49);
+  scroll-margin-bottom: 1em;
+}
+/* .text {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+.center{
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+} */
+
+@media only screen and (min-width: 33.75em) {  /* 540px */
+  .container {
+    text-align: center; 
+    /* width: 75%; */
+    display: grid;
+  }
+}
+
+@media only screen and (min-width: 45em) {  /* 720px */
+  .container {
+    text-align: center; 
+    /* width: 80%; */
+    display: grid;
+  }
+  
+} 
+
+@media only screen and (min-width: 60em) { /* 960px */
+  .container {
+    text-align: center; 
+    /* width: 75%; */
+    /* max-width: 60rem; */
+    display: grid;
+  }
+}
