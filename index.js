@@ -58,7 +58,7 @@ app.post('/taxiMath', function(req, res){
 
   taxulator.tripSetUp(from, to)
   res.render('taxi_math', {
-    fare: taxulator.getFare()
+    fare: "R" + taxulator.getFare()
   });
 });
 
