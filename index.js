@@ -58,7 +58,7 @@ app.post('/taxiMath', function(req, res){
 
   taxulator.tripSetUp(from, to)
   res.render('taxi_math', {
-    fare: taxulator.getFare()
+    fare: "R" + taxulator.getFare()
   });
 });
 
@@ -86,6 +86,15 @@ app.get('/taxiFareTotal', function(req, res){
         change: 'R0.00'
   });
 });
+
+app.get('/taxiCondition', function(req, res){
+  res.render('taxi_condition');
+});
+
+app.get('/backToMenu', function(req, res){
+  res.render('option1');
+});
+
 
 const PORT = process.env.PORT || 4422;
 
