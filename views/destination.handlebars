@@ -15,36 +15,42 @@
 
     </div>
 
-        <br>
-        <br>
+    <br>
+    <br>
 
-        <form action="/taxiMath" method="GET">
+    <form action="/taxiMath" method="post">
 
-            <div class="form-group">
-                <div class="float-md-left">
-                    <h5>from:</h5>
-                </div>
-                <div class="">
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="location" value="fromWhere">
-                    </div>
-                </div>
+        <div class="form-group w-25">
+            <div class="float-md-left">
+                <h5>from:</h5>
             </div>
+            <select name="locationFrom" class="browser-default custom-select">
+                <option selected>Place of departure</option>
+                <option value="CPT">Cape Town</option>
+                <option value="Nyanga">Nyanga</option>
+                <option value="Wynberg">Wynberg</option>
+                <option value="Strand">Strand</option>
+                <option value="Mfuleni">Mfuleni</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <div class="float-md-left">
-                    <h5>To:</h5>
-                </div>
-                <div class="">
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="location" value="toWhere">
-                    </div>
-                </div>
+        <div class="form-group w-25">
+            <div class="float-md-left">
+                <h5>To:</h5>
             </div>
+            <select name="locationTo" class="browser-default custom-select">
+                <option selected>Select destination</option>
+                <option value="CPT">Cape Town</option>
+                <option value="Nyanga">Nyanga</option>
+                <option value="Wynberg">Wynberg</option>
+                <option value="Strand">Stand</option>
+                <option value="Mfuleni">Mfuleni</option>
+            </select>
+        </div>
 
-            <button class="float-md-left btn btn-warning" type="submit" name="submit">SUBMIT</button>
+        <button class="float-md-left btn btn-warning" type="submit" name="submit">SUBMIT</button>
 
-        </form>
+    </form>
 </body>
 
 </html>

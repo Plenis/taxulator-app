@@ -1,13 +1,13 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
-// const TaxiRide = require("./taxulator");
+const TaxiRide = require("./taxulator");
 const flash = require("express-flash");
 const session = require("express-session");
 
 const app = express();
 
-// const taxulator = TaxiRide();
+const taxulator = TaxiRide();
 
 app.engine(
   "handlebars",
@@ -39,11 +39,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-
   res.render("index");
 });
 
 app.get('/menu', function(req, res){
+  let taxiType = req.body.typeOfTaxi
+  taxulator.chooseTaxi(taxiType);
 res.render('option1');
 });
 
@@ -51,12 +52,39 @@ app.get('/calculateFare', function(req, res){
   res.render('destination');
 });
 
-app.get('/taxiMath', function(req, res){
-  res.render('taxi_math');
+app.post('/taxiMath', function(req, res){
+  let from = req.body.locationFrom
+  let to = req.body.locationTo
+
+  taxulator.tripSetUp(from, to)
+  res.render('taxi_math', {
+    fare: taxulator.getFare()
+  });
+});
+
+
+app.post('/taxiFareTotal', function(req, res){
+  let numberOfPassengers = req.body.numberOfPassengers
+  let amountPaid = req.body.amountPaid
+  let taxifare = taxulator.getFare();
+
+  taxulator.calcTotalBill(taxifare, numberOfPassengers)
+  taxulator.calcPassChange(taxifare, amountPaid)
+   
+  res.render('taxi_total',{
+        total: "R" + taxulator.getTaxiBill(),
+        change: 'R' + taxulator.getChange()
+  });
 });
 
 app.get('/taxiFareTotal', function(req, res){
-  res.render('taxi_total');
+
+  taxulator.calcTotalBill()
+
+  res.render('taxi_total',{
+        total: 'R0.00',
+        change: 'R0.00'
+  });
 });
 
 const PORT = process.env.PORT || 4422;

@@ -17,21 +17,21 @@ describe('taxulator-app', function () {
         taxiRide.clctFare()
         taxiRide.clctFare("CPT to Strand")
 
-        assert.equal("CPT to Strand : R" + 25, taxiRide.getFare());
+        assert.equal(25, taxiRide.getFare());
 
     });
 
     it('should return the total bill for the specified number of passengers in the taxi', function () {
         taxiRide.calcTotalBill(25, 4)
 
-        assert.equal("R" + 100, taxiRide.getTaxiBill());
+        assert.equal(100, taxiRide.getTaxiBill());
 
     });
 
     it('should calculate how much change the passegers are getting from the amount the paid if there is', function () {
         taxiRide.calcPassChange(100, 200)
 
-        assert.equal("R" + 100, taxiRide.getChange());
+        assert.equal(100, taxiRide.getChange());
 
     });
 

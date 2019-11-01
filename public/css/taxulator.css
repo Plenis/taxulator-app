@@ -15,7 +15,9 @@
 body { 
   background-color: rgb(247, 32, 8)
 }
-
+option{
+  color: black;
+}
 /* a {
   color: cyan;
 }

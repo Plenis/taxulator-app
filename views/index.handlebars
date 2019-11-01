@@ -21,17 +21,19 @@
 
     <h3>WELCOME!!!</h3>
 
-    <p>This app is built to assit in Taxi Math, to assist people who get hard time in calculating change for passengers and the grand total for the driver. It has features for getting the total taxi fare price for wherever the taxi's going around Cape Town areas.  </p>
+    <p>This app is built to assist in Taxi Math and to help people who get hard time in calculating change for passengers. It will also help us keep track of the safety levels in taxi transportation. It has features for getting the total taxi fare for the chosen route and getting the grand total for the taxi ride.
+         This app currently works only for a few areas in Cape Town.  </p>
 
     <h4>What type of taxi are you in?</h4>
 
+    <form action="/menu" method="GET">
     <div class="" data-toggle="buttons">
         <label class="btn btn-primary" for="inlineRadio1">
-            <input type="radio" name="TypeOfTaxi" id="inlineRadio1" value="Siyaya" autocomplete="off">
+            <input type="radio" name="typeOfTaxi" id="inlineRadio1" value="siyaya" autocomplete="off">
             Siyaya
         </label>
         <label class="btn btn-primary" for="inlineRadio2">
-            <input type="radio" name="TypeOfTaxi" id="inlineRadio2" value="Quantum" autocomplete="off">
+            <input type="radio" name="typeOfTaxi" id="inlineRadio2" value="quantum" autocomplete="off">
             Quantum
         </label>
     </div>
@@ -39,7 +41,7 @@
     <br>
     <br>
     
-    <form action="/menu" method="GET">
+   
         <button class="btn btn-warning" type="submit" name="start">START</button>
     </form>
 </div>

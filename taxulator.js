@@ -19,6 +19,7 @@ module.exports = function TaxiRide() {
     }
 
 
+
     function overloadChecker(typeOfTaxi, numberOfPass) {
         capacityStatus;
 
@@ -42,6 +43,7 @@ module.exports = function TaxiRide() {
         tripString;
 
         tripString = from + " to " + to;
+        clctFare(tripString);
 
         return tripString;
 
@@ -49,13 +51,9 @@ module.exports = function TaxiRide() {
 
     function clctFare(tripString) {
 
-        fare;
-
         if (tripString === "CPT to Nyanga" || tripString === "Nyanga to CPT") {
-
             fare = +17;
         }
-
         if (tripString === "CPT to Wynberg" || tripString === "Wynberg to CPT") {
             fare = +14;
         }
@@ -69,7 +67,7 @@ module.exports = function TaxiRide() {
     }
 
     function getFare() {
-        return tripString + " : R" + fare;
+        return fare;
     }
 
 
@@ -78,24 +76,24 @@ module.exports = function TaxiRide() {
         numberOfPass;
         numberOfPass = nmbrOfPass;
 
-        totalTaxiBill = fare * nmbrOfPass
+        totalTaxiBill = getFare() * Number(nmbrOfPass)
     }
 
 
     function getTaxiBill() {
-        return "R" + totalTaxiBill;
+        return totalTaxiBill;
     }
 
 
     function calcPassChange(totalTaxiBill, amountPaid) {
         totalTaxiBill;
         change;
-        change = amountPaid - totalTaxiBill;
+        change = amountPaid - getTaxiBill();
 
     }
 
     function getChange() {
-        return "R" + change
+        return change
     }
 
     function rateDriver(results) {
@@ -125,8 +123,5 @@ module.exports = function TaxiRide() {
         getCapacityStatus,
         showResults,
         rateDriver
-
-
-
     }
 }
