@@ -62,8 +62,29 @@ app.post('/taxiMath', function(req, res){
   });
 });
 
+
+app.post('/taxiFareTotal', function(req, res){
+  let numberOfPassengers = req.body.numberOfPassengers
+  let amountPaid = req.body.amountPaid
+  let taxifare = taxulator.getFare();
+
+  taxulator.calcTotalBill(taxifare, numberOfPassengers)
+  taxulator.calcPassChange(taxifare, amountPaid)
+   
+  res.render('taxi_total',{
+        total: "R" + taxulator.getTaxiBill(),
+        change: 'R' + taxulator.getChange()
+  });
+});
+
 app.get('/taxiFareTotal', function(req, res){
-  res.render('taxi_total');
+
+  taxulator.calcTotalBill()
+
+  res.render('taxi_total',{
+        total: 'R0.00',
+        change: 'R0.00'
+  });
 });
 
 const PORT = process.env.PORT || 4422;

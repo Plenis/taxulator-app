@@ -13,24 +13,23 @@
     </div>
 
     <br>
-
+<form action="/taxiFareTotal" method="post">
     <div class="form-group w-25 row">
         <div class="col-xs-2">
-            <label class="float-md-left" for="ex1">Number of passengers:</label>
-            <input class="form-control" id="ex1" type="number">
-        </div>
+            <label class="float-md-left" for="ex1" >Number of passengers:</label>
+            <input class="form-control" id="ex1" type="number" name="numberOfPassengers">
         <br>
         <br>
     
         <div class="col-xs-2">
             <label class="float-md-left" for="ex2">Amount paid:</label>
-            <input class="form-control" id="ex1" type="number">
+            <input class="form-control" id="ex1" type="number" name="amountPaid">
         </div>
     </div>
 
     <br>
 
-    <form action="" method="">
+    
     <button class="float-md-left btn btn-warning" type="submit" name="calculateTaxiTotal">CALCULATE</button>
     </form>
 
@@ -39,7 +38,7 @@
 
     <div class="form-group">
         <div class="float-md-left">
-            <h5>TOTAL:</h5>
+            <h5>TOTAL:{{total}}</h5>
         </div>
     </div>
 
@@ -47,7 +46,7 @@
 
     <div class="form-group">
         <div class="float-md-left">
-            <h5>CHANGE:</h5>
+            <h5>CHANGE:{{change}}</h5>
         </div>
     </div>
 
