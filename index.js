@@ -52,8 +52,14 @@ app.get('/calculateFare', function(req, res){
   res.render('destination');
 });
 
-app.get('/taxiMath', function(req, res){
-  res.render('taxi_math');
+app.post('/taxiMath', function(req, res){
+  let from = req.body.locationFrom
+  let to = req.body.locationTo
+
+  taxulator.tripSetUp(from, to)
+  res.render('taxi_math', {
+    fare: taxulator.getFare()
+  });
 });
 
 app.get('/taxiFareTotal', function(req, res){

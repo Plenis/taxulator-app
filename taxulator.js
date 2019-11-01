@@ -39,20 +39,17 @@ module.exports = function TaxiRide() {
         tripString;
 
         tripString = from + " to " + to;
-
+        clctFare(tripString);
+        
         return tripString;
 
     }
 
     function clctFare(tripString) {
 
-        fare;
-
         if (tripString === "CPT to Nyanga" || tripString === "Nyanga to CPT") {
-
             fare = +17;
         }
-
         if (tripString === "CPT to Wynberg" || tripString === "Wynberg to CPT") {
             fare = +14;
         }
