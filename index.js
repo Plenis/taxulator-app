@@ -87,6 +87,15 @@ app.get('/taxiFareTotal', function(req, res){
   });
 });
 
+app.get('/taxiCondition', function(req, res){
+  res.render('taxi_condition');
+});
+
+app.get('/backToMenu', function(req, res){
+  res.render('option1');
+});
+
+
 const PORT = process.env.PORT || 4422;
 
 app.listen(PORT, function() {
